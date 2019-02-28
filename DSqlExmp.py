@@ -1,0 +1,16 @@
+import psycopg2
+con = psycopg2.connect(database = "testdb", user = "postgres",password="mh12jw3661")
+print("opened DataBase Successfully")
+cur = con.cursor()
+##cur.execute("Insert into company values(2,'IBM','Indira Nagar')")
+##cur.execute("Insert into company values(3,'Infosys','Domlur')")
+##cur.execute("Insert into company values(4,'Wipro','BTM')")
+##con.commit()
+cur.execute("select * from company")
+row=cur.fetchall()
+for r in row:
+    print("ID =",r[0])
+    print("Name = ",r[1])
+    print("Address = ",r[2])
+    print("----------")
+con.close()

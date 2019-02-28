@@ -1,0 +1,5 @@
+f= open('E:\Fileexmp.txt','r+')
+filestring=f.read()
+f.writelines(filestring)
+print(f.read())
+f.close()
